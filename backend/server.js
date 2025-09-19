@@ -30,6 +30,6 @@ mongoose
 app.use("/contact", contactRouter);
 
 // Health
-app.get("/health", (req, res) => res.json({ ok: true }));
+// app.get("/health", (req, res) => res.json({ ok: true }));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
