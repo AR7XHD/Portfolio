@@ -20,7 +20,7 @@ export function Navbar() {
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="fixed top-4 left-0 right-0 w-full hidden md:flex items-center justify-between px-8 z-50">
+      <div className="fixed top-4 left-0 right-0 w-full hidden lg:flex items-center justify-between px-8 z-50">
         {/* Logo on the left */}
         <div className="bg-white border  border-white rounded-full shadow-2xl backdrop-blur-sm px-4 py-2">
           <span className="text-white font-extrabold text-lg tracking-widest font-mono"></span>
@@ -74,7 +74,7 @@ export function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="fixed top-4 left-0 right-0 w-full md:hidden flex items-center justify-between px-4 z-50">
+      <div className="fixed top-4 left-0 right-0 w-full lg:hidden flex items-center justify-between px-4 z-50">
         {/* Logo */}
         <div className="bg-white border border-white rounded-full shadow-2xl backdrop-blur-sm px-3 py-2">
           <span className="text-white font-extrabold text-base tracking-widest font-mono"></span>
@@ -101,7 +101,7 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu Overlay (black & white styling like desktop) */}
-<div className={`fixed inset-0 z-[60] md:hidden transition-all duration-500 ease-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+<div className={`fixed inset-0 z-[60] lg:hidden transition-all duration-500 ease-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
   <div className="fixed inset-0 bg-black/60" onClick={() => setIsOpen(false)} />
   <div className={`fixed top-20 left-4 right-4 bg-black border border-gray-800 rounded-lg shadow-xl p-6 transform transition-all duration-500 ease-out ${
     isOpen ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-8 opacity-0 scale-95'
