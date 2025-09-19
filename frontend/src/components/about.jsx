@@ -9,7 +9,7 @@ export function About() {
           <div className="text-center md:text-left space-y-4 flex flex-col items-center md:items-start order-1 lg:order-1">
             {/* Greeting */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight whitespace-nowrap">
-              Hi, I'm <span className="text-blue-600">Abdur Rahman</span>
+              Hi,I'm <span className="text-blue-600">Abdur Rahman</span>
             </h2>
 
             {/* Job Title */}
