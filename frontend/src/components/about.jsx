@@ -1,12 +1,13 @@
 import React from "react";
+import "./about.css";
 
 export function About() {
   return (
     <section id="about" className="min-h-[70vh] md:h-[70vh] bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-10 md:pt-8 mt-2 md:ml-15">
       <div className="max-w-4xl mx-auto w-full flex justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center place-items-center max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center place-items-center max-w-3xl about-grid">
           {/* Left Content */}
-          <div className="text-center md:text-left space-y-4 flex flex-col items-center md:items-start order-1 lg:order-1">
+          <div className="text-center md:text-left space-y-4 flex flex-col items-center md:items-start order-1 lg:order-1 about-text-content">
             {/* Greeting */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight whitespace-nowrap">
               Hi,I'm <span className="text-blue-600">Abdur Rahman</span>

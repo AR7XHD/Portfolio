@@ -53,10 +53,6 @@ export function Projects() {
   ];
 
   const defaultCardProps = {
-    containerWidth: "420px",
-    containerHeight: "240px",
-    imageWidth: "420px",
-    imageHeight: "240px",
     rotateAmplitude: 10,
     scaleOnHover: 1.12,
     showMobileWarning: false,
@@ -76,15 +72,11 @@ export function Projects() {
       {/* Cards grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
         {products.map((p) => (
-          <div key={p.title} className="w-full max-w-[420px] mt-10">
+          <div key={p.title} className="w-full max-w-md mt-10 aspect-video">
             <TiltedCard
               imageSrc={p.thumbnail}
               altText={`${p.title} thumbnail`}
               captionText={p.caption}
-              containerWidth={defaultCardProps.containerWidth}
-              containerHeight={defaultCardProps.containerHeight}
-              imageWidth={defaultCardProps.imageWidth}
-              imageHeight={defaultCardProps.imageHeight}
               rotateAmplitude={defaultCardProps.rotateAmplitude}
               scaleOnHover={defaultCardProps.scaleOnHover}
               showMobileWarning={defaultCardProps.showMobileWarning}
