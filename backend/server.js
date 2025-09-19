@@ -11,10 +11,23 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
-app.use(cors({
-  origin: process.env.CORS_ORIGIN, 
-  credentials: true
-}));
+// CORS: allow multiple origins via comma-separated env, and handle preflight
+const whitelist = (process.env.CORS_ORIGIN || "").split(",").map(s => s.trim()).filter(Boolean);
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow server-to-server and tools with no origin
+    if (!origin || whitelist.length === 0 || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`Not allowed by CORS: ${origin}`));
+    }
+  },
+  methods: ["GET", "POST", "OPTIONS"],
+  credentials: true,
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // Pre-flight
 
 // MongoDB connect
 
