@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is a full-stack portfolio website built using the **MERN stack** (MongoDB, Express.js, React, Node.js).  \r It highlights my projects, technical skills, and professional experience, with a modern and responsive design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AR7XHD/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AR7XHD/Portfolio/issues"
+  },
+  "homepage": "https://github.com/AR7XHD/Portfolio#readme"
+}
