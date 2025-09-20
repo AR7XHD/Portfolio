@@ -11,6 +11,7 @@ export function ContactForm() {
     message: "",
   });
 
+  const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
@@ -19,7 +20,8 @@ export function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("Sending your message...");
+    setIsSending(true);
 
     const api = getEnv("VITE_API_URL") || "";
 
@@ -37,13 +39,13 @@ export function ContactForm() {
           return;
       }
 
-      showToast("success","Message sent successfully");
-
-      setStatus("Message sent successfully ✅");
+      setStatus("Message sent successfully! ");
       setFormData({ name: "", email: "", message: "" });
+      setIsSending(false);
     } catch (err) {
-      console.error(err);
+      setStatus("Failed to send message. Please try again.");
       showToast("error","Something went wrong");
+      setIsSending(false);
     }
   };
 
@@ -96,17 +98,31 @@ export function ContactForm() {
             ></textarea>
           </div>
 
+          <div className="min-h-6 mb-2">
+            {status && (
+              <p className={`text-sm ${isSending ? 'text-blue-600' : status.includes('success') ? 'text-green-600' : 'text-red-600'} font-medium flex items-center`}>
+                {isSending && (
+                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                )}
+                {status}
+              </p>
+            )}
+          </div>
           <button
             type="submit"
-            className="w-full bg-black text-white font-medium py-3 rounded-xl hover:bg-white hover:text-black border border-black transition"
+            disabled={isSending}
+            className={`w-full bg-black text-white font-medium py-3 px-6 rounded-xl border border-black transition-colors ${isSending ? 'opacity-70 cursor-not-allowed' : 'hover:bg-white hover:text-black'}`}
           >
             Send Message
           </button>
         </form>
 
-        {status && (
+        {/* {status && (
           <p className="text-center mt-4 text-gray-700 font-medium">{status}</p>
-        )}
+        )} */}
       </div>
     </section>
   );
