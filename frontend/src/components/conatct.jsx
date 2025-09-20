@@ -21,8 +21,10 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("Sending...");
 
+    const api = getEnv("VITE_API_URL") || "";
+
     try {
-      const res = await fetch(`${getEnv("VITE_API_URL")}/contact`, {
+      const res = await fetch(`${api}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
