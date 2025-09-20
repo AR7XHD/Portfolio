@@ -63,11 +63,12 @@ export function Projects() {
     <section id="projects" className="max-w-6xl mx-auto px-4 py-12">
       {/* Header */}
       <header className="mb-8 text-center">
-        <h2 className="text-2xl md:text-4xl font-bold">Selected Projects</h2>
-        <p className="text-sm md:text-base text-gray-600 mt-2 max-w-2xl mx-auto">
-          A handful of projects I've built. Click any card to open the GitHub link to see source.
-        </p>
-      </header>
+  <h2 className="text-2xl md:text-4xl font-bold">Selected Projects</h2>
+  <p className="text-sm md:text-base text-gray-600 mt-2 max-w-2xl mx-auto">
+    A handful of projects I've built, showcasing my work and skills.
+  </p>
+</header>
+
 
       {/* Cards grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
